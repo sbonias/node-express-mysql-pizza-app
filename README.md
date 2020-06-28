@@ -17,7 +17,8 @@ A full stack application with a front end implemented with HTML/CSS as well as H
 
 ## Deployed Application
 
-- [The URL of the GitHub repository](https://github.com/sbonias/node-mysql-employee-tracker)
+- [The URL of the GitHub repository](https://github.com/sbonias/node-express-mysql-pizza-app)
+- [The URL of the Deployed application](https://limitless-sands-77728.herokuapp.com/)
 
 ## Challenges
 
@@ -31,6 +32,7 @@ Run npm i mysql
 Run npm i dotenv
 Run npm i express-handlebars
 Run npm i nodemon
+Run npm i express
 ```
 
 ## Contributing
