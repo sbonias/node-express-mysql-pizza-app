@@ -1,12 +1,11 @@
-DROP DATABASE IF EXISTS sandbox_db;
-CREATE DATABASE sandbox_db;
+DROP DATABASE IF EXISTS pizza_db;
+CREATE DATABASE pizza_db;
 
-USE sandbox_db;
+USE pizza_db;
 
-CREATE TABLE users (
+CREATE TABLE pizzas (
     id INTEGER AUTO_INCREMENT NOT NULL,
-    username VARCHAR(255),
-    password VARCHAR(255),
+    pizza_name VARCHAR(255) NOT NULL,
+    devoured BOOLEAN NOT NULL,
     PRIMARY KEY(id)  
 )
-
