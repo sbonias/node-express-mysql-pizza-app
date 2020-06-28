@@ -1,20 +1,66 @@
-var byline = document.getElementById("byline"); // Find the H2
-bylineText = byline.innerHTML; // Get the content of the H2
-bylineArr = bylineText.split(""); // Split content into array
-byline.innerHTML = ""; // Empty current content
+// Make sure we wait to attach our handlers until the DOM is fully loaded.
+// hide the image and app title after 10 seconds providing enough time for the animation to run
+// https://stackoverflow.com/questions/26393539/css-solution-to-hide-div-after-x-amount-of-seconds
+$(function () {
+  var hide = $(".pizza-demo");
+  setTimeout(function () {
+    hide.hide();
+  }, 10000);
+  // $(".change-sleep").on("click", function(event) {
+  //   var id = $(this).data("id");
+  //   var newSleep = $(this).data("newsleep");
 
-var span; // Create variables to create elements
-var letter;
+  //   var newSleepState = {
+  //     sleepy: newSleep
+  //   };
 
-for (i = 0; i < bylineArr.length; i++) {
-  // Loop for every letter
-  span = document.createElement("span"); // Create a <span> element
-  letter = document.createTextNode(bylineArr[i]); // Create the letter
-  if (bylineArr[i] == " ") {
-    // If the letter is a space...
-    byline.appendChild(letter); // ...Add the space without a span
-  } else {
-    span.appendChild(letter); // Add the letter to the span
-    byline.appendChild(span); // Add the span to the h2
-  }
-}
+  //   // Send the PUT request.
+  //   $.ajax("/api/cats/" + id, {
+  //     type: "PUT",
+  //     data: newSleepState
+  //   }).then(
+  //     function() {
+  //       console.log("changed sleep to", newSleep);
+  //       // Reload the page to get the updated list
+  //       location.reload();
+  //     }
+  //   );
+  // });
+
+  // $(".create-form").on("submit", function(event) {
+  //   // Make sure to preventDefault on a submit event.
+  //   event.preventDefault();
+
+  //   var newCat = {
+  //     name: $("#ca").val().trim(),
+  //     sleepy: $("[name=sleepy]:checked").val().trim()
+  //   };
+
+  //   // Send the POST request.
+  //   $.ajax("/api/cats", {
+  //     type: "POST",
+  //     data: newCat
+  //   }).then(
+  //     function() {
+  //       console.log("created new cat");
+  //       // Reload the page to get the updated list
+  //       location.reload();
+  //     }
+  //   );
+  // });
+
+  // $(".delete-cat").on("click", function(event) {
+  //   var id = $(this).data("id");
+
+  //   // Send the DELETE request.
+  //   $.ajax("/api/cats/" + id, {
+  //     type: "DELETE"
+  //   }).then(
+  //     function() {
+  //       console.log("deleted cat", id);
+  //       // Reload the page to get the updated list
+  //       location.reload();
+  //     }
+  //   );
+  // });
+});
