@@ -8,10 +8,8 @@
   <ul>
     {{#each pizzas}}
     <li>
-      <p>ID: {{this.id}}</p>
-      <p>Pizza: {{this.pizza}}</p>
+      <p>{{this.pizza_name}}</p>
       <button type="submit">Devour!</button>
-      <button type="submit">Remove!</button>
     </li>
     {{/each}}
   </ul>
@@ -22,23 +20,20 @@
   <ul>
     {{#each pizzas}}
     <li>
-      <p>ID: {{this.id}}</p>
-      <p>Pizza: {{this.pizza}}</p>
     </li>
     {{/each}}
   </ul>
 </div>
 
 <div class="main">
-  <img src="/assets/images/pizza.png" style="width: 400px;height:100px" alt="Pizza" class="pizza2" />
+  <img src="/assets/images/pizza.png" style="width: 300px;height:150px" alt="Pizza" class="pizza2" />
   <h2 class="byline2" id="byline2">Pizza Devourer</h2>
-  <form action="burgers/create/" method="POST">
+  <form>
     <div class="form-group">
-      <input type="text" name="name">
+      <input type="text" id="newPizza">
+      <button type="submit" class="makePizza">Add Pizza</button>
+      <h3>Enter a pizza you want to eat then click the "Submit" button</h3>
     </div>
-    <button type="submit">Add Pizza</button>
-    <br>
-    <h3>Enter a pizza you want to eat then click the "Submit" button</h3>
   </form>
 </div>
 

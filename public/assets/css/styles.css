@@ -1,10 +1,10 @@
 /* Animation properties */
 .pizza {
-  animation: pizza 10s ease-out;
+  animation: pizza 3s ease-out;
 }
 
 .byline {
-  animation: move-byline 10s linear;
+  animation: move-byline 3s linear;
 }
 
 /* Keyframes */
@@ -74,6 +74,7 @@ body {
 
 img {
   width: 100%;
+  text-align: center;
 }
 
 .pizza,
@@ -117,6 +118,7 @@ img {
   text-align: center;
   margin-top: 30%;
   display: none;
+  float: center;
 }
 
 .ordered {

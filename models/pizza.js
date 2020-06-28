@@ -5,21 +5,12 @@ var pizza = {
   all: function (cb) {
     orm.all("pizzas", function (res) {
       cb(res);
+      console.log("is it working?");
     });
   },
   // The variables cols and vals are arrays.
-  create: function (cols, vals, cb) {
-    orm.create("pizzas", cols, vals, function (res) {
-      cb(res);
-    });
-  },
-  update: function (objColVals, condition, cb) {
-    orm.update("pizzas", objColVals, condition, function (res) {
-      cb(res);
-    });
-  },
-  delete: function (condition, cb) {
-    orm.delete("pizzas", condition, function (res) {
+  create: function (val, cb) {
+    orm.insertOne("pizzas", "pizza_name", val, function (res) {
       cb(res);
     });
   },
