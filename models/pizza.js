@@ -1,16 +1,16 @@
 // Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
-var pizza = {
+const pizza = {
   all: function (cb) {
-    orm.all("pizzas", function (res) {
+    orm.all("pizzas", (res) => {
       cb(res);
       console.log("is it working?");
     });
   },
   // The variables cols and vals are arrays.
-  create: function (val, cb) {
-    orm.insertOne("pizzas", "pizza_name", val, function (res) {
+  insertOne: function (val, cb) {
+    orm.insertOne("pizzas", val, (res) => {
       cb(res);
     });
   },

@@ -1,3 +1,3 @@
-INSERT INTO pizzas (pizza_name) VALUES ("Meatlovers");
-INSERT INTO pizzas (pizza_name) VALUES ("Veggie");
-INSERT INTO pizzas (pizza_name) VALUES ("Chicken Kabob");
+INSERT INTO pizzas (pizza_name, devoured) VALUES ("Meatlovers", false);
+INSERT INTO pizzas (pizza_name, devoured) VALUES ("Veggie", false);
+INSERT INTO pizzas (pizza_name, devoured) VALUES ("Chicken Kabob", false);
