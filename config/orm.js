@@ -56,13 +56,23 @@ var orm = {
     });
   },
   // insertOne() Method
-  insertOne: function (table, col, val, cb) {
-    var queryString =
-      "INSERT INTO " + table + "(" + col + ") values ('" + val + "');";
+  insertOne: function (table, cols, vals, cb) {
+    var queryString = "INSERT INTO " + table;
+
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
     console.log(queryString);
+
     connection.query(queryString, function (err, response) {
       if (err) throw err;
+
       cb(response);
+
       console.log(response);
     });
   },

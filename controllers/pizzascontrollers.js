@@ -17,15 +17,14 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/pizzas", function (req, res) {
-  pizza.create(
-    ["pizza_name", "devoured"],
-    [req.body.name, req.body.devoured],
-    function (result) {
-      // Send back the ID of the new pizza
-      res.json({ id: result.insertId });
-    }
-  );
+  pizza.insertOne(["pizza_name"], [req.body.name], function (result) {
+    // Send back the ID of the new pizza
+    res.json({ id: result.insertId });
+  });
 });
 
 // Export routes for server.js to use.
 module.exports = router;
+
+// ["pizza_name", "devoured"],
+// [req.body.name, req.body.devoured],

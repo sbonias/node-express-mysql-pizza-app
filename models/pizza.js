@@ -5,12 +5,11 @@ const pizza = {
   all: function (cb) {
     orm.all("pizzas", (res) => {
       cb(res);
-      console.log("is it working?");
     });
   },
   // The variables cols and vals are arrays.
-  insertOne: function (val, cb) {
-    orm.insertOne("pizzas", val, (res) => {
+  insertOne: function (cols, vals, cb) {
+    orm.insertOne("pizzas", cols, vals, (res) => {
       cb(res);
     });
   },
