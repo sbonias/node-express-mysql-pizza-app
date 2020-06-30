@@ -3,33 +3,33 @@
 // Hide the image and title after 10 seconds providing enough time for the animation to run
 // https://stackoverflow.com/questions/26393539/css-solution-to-hide-div-after-x-amount-of-seconds
 
-// $(function () {
-//   let hide = $(".pizza-intro");
-//   setTimeout(function () {
-//     hide.hide();
-//   }, 3000);
-// });
+$(function () {
+  let hide = $(".pizza-intro");
+  setTimeout(function () {
+    hide.hide();
+  }, 3000);
+});
 
-// $(function () {
-//   var appear = $(".main");
-//   setTimeout(function () {
-//     appear.css("display", "block");
-//   }, 3000);
-// });
+$(function () {
+  var appear = $(".main");
+  setTimeout(function () {
+    appear.css("display", "block");
+  }, 3000);
+});
 
-// $(function () {
-//   var appear = $(".ordered");
-//   setTimeout(function () {
-//     appear.css("display", "inline-block");
-//   }, 3000);
-// });
+$(function () {
+  var appear = $(".ordered");
+  setTimeout(function () {
+    appear.css("display", "inline-block");
+  }, 3000);
+});
 
-// $(function () {
-//   var appear = $(".devoured");
-//   setTimeout(function () {
-//     appear.css("display", "inline-block");
-//   }, 3000);
-// });
+$(function () {
+  var appear = $(".devoured");
+  setTimeout(function () {
+    appear.css("display", "inline-block");
+  }, 3000);
+});
 
 $(function () {
   $(".create-form").on("submit", function (event) {
@@ -37,8 +37,8 @@ $(function () {
     event.preventDefault();
 
     let newPizza = {
-      name: $("#newPizza").val().trim(),
-      // devoured: 0,
+      pizza_name: $("#newPizza").val().trim(),
+      devoured: 0,
     };
 
     // Send the POST request.

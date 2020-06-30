@@ -116,25 +116,25 @@ img {
   color: white;
   font-family: "ITC Serif Gothic", Lato;
   text-align: center;
-  margin-top: 30%;
-  /* display: none; */
-  float: center;
+  margin-top: 10%;
+  display: none;
+  /* float: center; */
 }
 
 .ordered {
   color: white;
   font-family: "ITC Serif Gothic", Lato;
-  margin-top: -20%;
+  /* margin-top: -20%; */
   margin-left: 10%;
-  /* display: none; */
+  display: none;
   float: left;
 }
 
 .devoured {
   color: white;
   font-family: "ITC Serif Gothic", Lato;
-  margin-top: -20%;
+  /* margin-top: -20%; */
   margin-right: 10%;
-  /* display: none; */
+  display: none;
   float: right;
 }

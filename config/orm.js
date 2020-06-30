@@ -1,7 +1,3 @@
-// Here is the O.R.M. where you write functions
-// that takes inputs and conditions and turn
-// them into database commands like SQL.
-
 // Import MySQL connection.
 var connection = require("../config/connection");
 
@@ -46,8 +42,8 @@ function objToSql(ob) {
 // Object for all our SQL statement functions.
 var orm = {
   // selectAll() Method
-  all: function (tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+  all: function (table, cb) {
+    var queryString = "SELECT * FROM " + table + ";";
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
@@ -56,27 +52,31 @@ var orm = {
     });
   },
   // insertOne() Method
+  // insertOne: function (table, cols, vals, cb) {
   insertOne: function (table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
-
+    var queryString =
+      "INSERT INTO " +
+      table +
+      " (" +
+      cols.toString() +
+      ") " +
+      "VALUES (" +
+      printQuestionMarks(vals.length) +
+      ") ";
     console.log(queryString);
-
     connection.query(queryString, function (err, response) {
       if (err) throw err;
-
       cb(response);
-
       console.log(response);
     });
   },
 };
+// queryString += " (";
+// queryString += cols.toString();
+// queryString += ") ";
+// queryString += "VALUES (";
+// queryString += printQuestionMarks(vals.length);
+// queryString += ") ";
 
 // Export the orm object for the model (pizza.js).
 module.exports = orm;
